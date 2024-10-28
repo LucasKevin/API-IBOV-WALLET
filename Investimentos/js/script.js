@@ -1,4 +1,4 @@
-const API_TOKEN = 'eeRPDEqoW6cmNC1GiC93zU';
+const API_TOKEN = ''; // TOKEN DA API
 
 // Configuração do gráfico
 let chart;
