@@ -6,7 +6,6 @@
     <title>Carteira de Investimentos e Despesas</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://code.highcharts.com/highcharts.js"></script> <!-- Highcharts -->
 </head>
 <body>
     <div class="container">
@@ -36,59 +35,30 @@
         </section>
 
         <section class="api-bolsa">
-            <h2>Bolsa de Valores (Em Tempo Real)</h2>
-            <div id="grafico-bolsa" style="width:100%; height:400px;"></div> <!-- Gráfico -->
+            <h2>Ibovespa (Em Tempo Real)</h2>
+            <p id="cotacao-bolsa">Carregando cotação...</p>
+            <div id="grafico-bolsa"></div>
         </section>
         
         <section class="despesas">
-            <h2>Despesas</h2>
-            <form id="form-despesas">
+            <h2>Divisão de Salário</h2>
+            <form id="form-salario">
                 <label for="salario">Salário:</label>
                 <input type="number" id="salario" placeholder="Digite seu salário">
-        
-                <label for="despesa">Despesa:</label>
-                <input type="number" id="despesa" placeholder="Digite uma despesa">
-        
+    
                 <button type="button" id="calcular">Calcular</button>
             </form>
         
-            <div class="resultado-despesas">
+            <div class="resultado-salario">
                 <h3>Resultado</h3>
-                <p>Investir: R$ <span id="investir">0,00</span></p>
+                <p>Essenciais: R$ <span id="pagar">0,00</span></p>
                 <p>Gastar: R$ <span id="gastar">0,00</span></p>
-                <p>Pagar contas: R$ <span id="pagar">0,00</span></p>
+                <p>Investir: R$ <span id="investir">0,00</span></p>
             </div>
-        </section>        
+        </section>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            Highcharts.chart('grafico-bolsa', {
-                chart: {
-                    type: 'line'
-                },
-                title: {
-                    text: 'Ibovespa (IBOV)'
-                },
-                subtitle: {
-                    text: 'Atualizado em tempo real'
-                },
-                xAxis: {
-                    categories: ['24 Set', '26 Set', '30 Set', '2 Out', '4 Out', '8 Out', '10 Out', '14 Out', '16 Out', '18 Out', '22 Out']
-                },
-                yAxis: {
-                    title: {
-                        text: 'Pontos (Milhares)'
-                    }
-                },
-                series: [{
-                    name: 'Ibovespa',
-                    data: [130, 131, 132, 133, 132, 131, 130, 129, 130, 128, 129]  // Exemplo de dados
-                }],
-                tooltip: {
-                    valueSuffix: 'k'
-                }
-            });
-        });
-    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="js/script.js"></script>   
 </body>
 </html>
